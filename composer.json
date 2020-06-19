@@ -1,0 +1,21 @@
+{
+  "name": "cramler/amoconnector",
+  "type": "library",
+  "description": "Another amoCRM api connector",
+  "keywords": [
+    "amoCRM",
+    "api"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Igor Pershin",
+      "email": "igor.pershin.me@gmail.com",
+      "homepage": "https://pershin.me",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.6"
+  }
+}
