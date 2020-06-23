@@ -71,9 +71,10 @@ class AmoCrmConnector
         $out = $this->sendCurlRequest($leads, $url);
 
         $response = json_decode($out, true);
+
         $response = $response['response'];
 
-//        return $response['leads']['add'][0]['id'] ?? 'undefined';
+        return $response['leads']['add'][0]['id'];
     }
 
     /**
@@ -106,12 +107,12 @@ class AmoCrmConnector
         return $response;
     }
 
-    /**
-     * @param $orderId
-     * @param $message
-     * @return mixed|null
-     * @throws Exception
-     */
+	/**
+	 * @param $orderId
+	 * @param $message
+	 * @return null
+	 * @throws Exception
+	 */
     public function createNote($orderId, $message)
     {
         $notes = ['add' => []];
@@ -130,11 +131,14 @@ class AmoCrmConnector
             return null;
         }
 
-        $out = $this->sendCurlRequest($notes, $url);
-        $response = json_decode($out, true);
-        $response = $response['response'];
+        $this->sendCurlRequest($notes, $url);
 
-        return $response;
+//        $out = $this->sendCurlRequest($notes, $url);
+//        $response = json_decode($out, true);
+//        $response = $response['response']
+//        return $response;
+
+		return ;
     }
 
     private function sendCurlRequest($data, $url)
